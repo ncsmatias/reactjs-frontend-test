@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { HtmlHTMLAttributes, useEffect, useState } from 'react';
 import { Header } from '../../components/Header'
 import Webcam from "react-webcam";
 import { Modal, Button } from 'antd';
 
 import '../Meting/styles.css'
 
+interface Users{
+  username: string,
+  url: string,
+}
+
 export const Meting = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [user, setUser] = useState<Users[]>([]);
+
+  function addUser(user : Users[]) {
+    setUser(user);
+  }
+
+  console.log(user)
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -20,6 +32,10 @@ export const Meting = () => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+
+  const insertOn = () => {
+    addUser([{username: 'Nicolas', url: 'https://www.youtube.com/watch?v=EhnXaybirdA&ab_channel=Rocketseat'}])
+  }
 
   return(
     <>
@@ -40,7 +56,7 @@ export const Meting = () => {
             Encerar
           </Button>
           
-          <Button type="primary">Configuração</Button>
+          <Button type="primary" onClick={insertOn}>Configuração</Button>
           <Button type="primary">Tela cheia</Button>
           <Modal title="Atenção" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
             <h2>Encerrar a chamada</h2>
