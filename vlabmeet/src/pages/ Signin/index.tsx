@@ -15,7 +15,7 @@ const Signin: React.FC = () => {
   const onFinish = (values: User) => {
     setUser(values)
     localStorage.setItem('user', JSON.stringify(user)) 
-    navigate('/Meting')
+    navigate('/meeting')
   };
 
  
