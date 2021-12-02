@@ -1,5 +1,5 @@
 import React, { HtmlHTMLAttributes, useEffect, useState } from 'react';
-import { Header } from '../../components/Header'
+import Header from '../../components/Header';
 import Webcam from "react-webcam";
 import { Modal, Button } from 'antd';
 
