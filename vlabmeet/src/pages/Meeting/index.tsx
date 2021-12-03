@@ -7,6 +7,7 @@ import { Button, Modal } from 'antd';
 import { CloseCircleFilled, AudioFilled, InfoCircleFilled, VideoCameraAddOutlined  } from '@ant-design/icons';
 
 import Webcam from "react-webcam";
+import Users from '../../components/Users';
 
 interface Audio {
   muted: boolean;
@@ -51,7 +52,7 @@ const Meeting: React.FC = () => {
         <Header />
         <Content>
           <UsersContainer>
-
+            <Users/>
           </UsersContainer>
           <OwnerContainer>
             <Webcam audio={audio.muted} width={350} height={250} style={{marginTop:'12px', borderRadius:'1.5rem', width:'auto'}}/>
